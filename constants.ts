@@ -34,65 +34,6 @@ export const PROJECTS: Project[] = [
     videoUrl: '/luxevideo3.mp4',
     type: 'video',
   },
-  {
-    id: '4',
-    title: 'Summer Outfit Inspo',
-    category: 'Fashion',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1080&auto=format&fit=crop', // Vertical fashion
-    videoUrl: '/luxevideo4.mp4',
-    type: 'video',
-  },
-  {
-    id: '5',
-    title: 'Gold Jewelry Stack',
-    category: 'Fashion',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1080&auto=format&fit=crop', // Vertical jewelry
-    videoUrl: '/luxevideo5.mp4',
-    type: 'video',
-  },
-  // IMAGES
-  {
-    id: '6',
-    title: 'Minimalist Shelfie',
-    category: 'Beauty',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1590439471360-119389302d94?q=80&w=2670&auto=format&fit=crop', // Aesthetic bathroom shelf
-    type: 'image',
-  },
-  {
-    id: '7',
-    title: 'Coffee Date',
-    category: 'Lifestyle',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1515712537213-9993309a80db?q=80&w=2574&auto=format&fit=crop', // POV coffee shop
-    type: 'image',
-  },
-  {
-    id: '8',
-    title: 'Product Texture Shot',
-    category: 'Beauty',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1608248598715-dd053074d222?q=80&w=2574&auto=format&fit=crop', // Texture swatch on skin
-    type: 'image',
-  },
-  {
-    id: '9',
-    title: 'Silk Scarf Styling',
-    category: 'Fashion',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=2670&auto=format&fit=crop', // Styling detail
-    type: 'image',
-  },
-  {
-    id: '10',
-    title: 'Get Ready With Me',
-    category: 'Lifestyle',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=2670&auto=format&fit=crop', // Makeup products mess
-    type: 'image',
-  },
-  {
-    id: '11',
-    title: 'Soft Glam Look',
-    category: 'Beauty',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=2574&auto=format&fit=crop', // Final look selfie
-    type: 'image',
-  },
 ];
 
 export const BRANDS: Brand[] = [

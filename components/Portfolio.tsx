@@ -8,7 +8,7 @@ export const Portfolio: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [isHovered, setIsHovered] = useState<string | null>(null);
 
-  const categories = ['All', 'Beauty', 'Fashion', 'Lifestyle'];
+  const categories = ['All', 'Beauty', 'Lifestyle'];
 
   const filteredProjects = activeCategory === 'All'
     ? PROJECTS
