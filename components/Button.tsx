@@ -6,23 +6,23 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  variant = 'primary', 
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  variant = 'primary',
   icon = false,
   className = '',
-  ...props 
+  ...props
 }) => {
-  const baseStyles = "inline-flex items-center justify-center px-8 py-3 transition-all duration-300 ease-out text-sm tracking-widest uppercase font-sans font-medium";
-  
+  const baseStyles = "inline-flex items-center justify-center px-8 py-3 transition-all duration-300 ease-out text-sm tracking-widest uppercase font-sans font-medium rounded-sm";
+
   const variants = {
-    primary: "bg-stone-800 text-beige-100 hover:bg-stone-700",
-    outline: "border border-stone-800 text-stone-800 hover:bg-stone-800 hover:text-beige-100",
-    ghost: "text-stone-600 hover:text-stone-900 underline underline-offset-4 decoration-1",
+    primary: "bg-brown-900 text-cream-50 hover:bg-brown-800 hover:shadow-lg hover:-translate-y-1",
+    outline: "border border-brown-900 text-brown-900 hover:bg-brown-900 hover:text-cream-50",
+    ghost: "text-brown-800 hover:text-brown-900 underline underline-offset-4 decoration-1 hover:decoration-gold-500",
   };
 
   return (
-    <button 
+    <button
       className={`${baseStyles} ${variants[variant]} ${className}`}
       {...props}
     >

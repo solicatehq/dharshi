@@ -12,7 +12,7 @@ import { MoodBoard } from './components/MoodBoard';
 
 function App() {
   return (
-    <div className="min-h-screen bg-beige-200 font-sans selection:bg-stone-300 selection:text-stone-900">
+    <div className="min-h-screen bg-cream-100 font-sans selection:bg-gold-400 selection:text-white">
       <Navbar />
       <main>
         <Hero />
