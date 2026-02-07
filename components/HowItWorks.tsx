@@ -1,73 +1,81 @@
 import React from 'react';
-import { Send, Clapperboard, Sparkles, Package } from 'lucide-react';
+import { Send, Clapperboard, Sparkles, Package, ArrowRight } from 'lucide-react';
 
 export const HowItWorks: React.FC = () => {
     const steps = [
         {
-            icon: <Send size={24} />,
+            icon: <Send strokeWidth={1} size={32} />,
             title: "Discovery",
-            description: "We start with your vision. Through a brief questionnaire, I understand your brand values and campaign goals."
+            description: "We align on your brand's vision, goals, and aesthetic requirements through a detailed consultation."
         },
         {
-            icon: <Package size={24} />,
-            title: "Product & Prep",
-            description: "You ship the products. I create a detailed mood board to ensure every frame aligns with your aesthetic."
+            icon: <Package strokeWidth={1} size={32} />,
+            title: "Concept & Prep",
+            description: "You ship the products while I curate a mood board and shot list tailored to your campaign objectives."
         },
         {
-            icon: <Clapperboard size={24} />,
+            icon: <Clapperboard strokeWidth={1} size={32} />,
             title: "Production",
-            description: "Filming and editing happen with precision. I focus on natural lighting, high-quality textures, and engaging storytelling."
+            description: "Filming and editing with a focus on high-end lighting, textures, and storytelling that converts."
         },
         {
-            icon: <Sparkles size={24} />,
+            icon: <Sparkles strokeWidth={1} size={32} />,
             title: "Delivery",
-            description: "You receive polished assets ready for review. I offer one round of refinements to ensure the content is perfect."
+            description: "Receive polished, ready-to-post assets. Review and refine to ensure perfection."
         }
     ];
 
     return (
-        <section id="process" className="py-24 bg-cream-100">
-            <div className="max-w-6xl mx-auto px-6">
+        <section id="process" className="py-24 md:py-32 bg-cream-50 relative overflow-hidden">
+            {/* Decorative Background Line */}
+            <div className="absolute top-1/2 left-0 w-full h-px bg-gold-400/20 -translate-y-1/2 hidden md:block" />
 
-                <div className="text-center mb-16">
-                    <span className="text-xs font-sans uppercase tracking-[0.2em] text-gold-500 mb-4 block">The Process</span>
-                    <h2 className="font-display text-4xl md:text-5xl text-brown-900">Seamless Collaboration</h2>
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+                <div className="text-center mb-24">
+                    <span className="text-xs font-sans uppercase tracking-[0.3em] text-brown-500 mb-4 block">The Process</span>
+                    <h2 className="font-serif text-5xl md:text-6xl text-brown-900">Seamless Collaboration</h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-
-                    {/* Connector Line (Desktop) */}
-                    <div className="hidden lg:block absolute top-12 left-0 w-full h-px bg-gold-400/30 -z-10"></div>
-
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
                     {steps.map((step, index) => (
-                        <div key={index} className="relative flex flex-col items-center text-center group">
-
-                            {/* Icon Circle */}
-                            <div className="w-24 h-24 rounded-full bg-white border border-gold-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm relative z-10 group-hover:border-gold-500/50">
-                                <span className="text-brown-400 group-hover:text-gold-500 transition-colors duration-300">
-                                    {step.icon}
-                                </span>
+                        <div key={index} className="relative group">
+                            {/* Step Number Background */}
+                            <div className="absolute -top-10 -left-6 text-9xl font-serif text-gold-400/10 z-0 select-none transition-colors group-hover:text-gold-400/20">
+                                0{index + 1}
                             </div>
 
-                            {/* Step Number Badge */}
-                            <div className="absolute top-0 right-1/4 transform translate-x-2 -translate-y-1 bg-brown-900 text-cream-50 text-[10px] font-bold w-6 h-6 rounded-full flex items-center justify-center z-20 border border-cream-50">
-                                {index + 1}
+                            {/* Content Card */}
+                            <div className="relative z-10 pt-12">
+                                <div className="mb-6 text-brown-800 group-hover:text-gold-500 transition-colors duration-300">
+                                    <div className="w-16 h-16 rounded-full border border-brown-200 flex items-center justify-center bg-cream-50 group-hover:border-gold-400 transition-all">
+                                        {step.icon}
+                                    </div>
+                                </div>
+
+                                <h3 className="font-serif text-2xl text-brown-900 mb-4 group-hover:translate-x-2 transition-transform duration-300">
+                                    {step.title}
+                                </h3>
+
+                                <div className="w-8 h-px bg-gold-400 mb-4 group-hover:w-16 transition-all duration-500" />
+
+                                <p className="text-brown-600/80 font-sans text-sm leading-relaxed">
+                                    {step.description}
+                                </p>
                             </div>
 
-                            <h3 className="font-display text-xl text-brown-900 mb-3">{step.title}</h3>
-                            <p className="text-brown-800/70 text-sm leading-relaxed font-sans max-w-xs">
-                                {step.description}
-                            </p>
+                            {/* Mobile Connector */}
+                            {index !== steps.length - 1 && (
+                                <div className="absolute left-8 top-28 bottom-[-48px] w-px bg-gold-400/30 md:hidden" />
+                            )}
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-16 text-center">
-                    <p className="font-serif italic text-brown-800/60 text-lg">
-                        "From concept to conversion, handled with care."
-                    </p>
+                <div className="mt-24 text-center">
+                    <a href="#contact" className="inline-flex items-center gap-2 text-brown-900 border-b border-brown-900 pb-1 text-sm uppercase tracking-widest hover:text-gold-500 hover:border-gold-500 transition-all">
+                        Start Your Project <ArrowRight size={16} />
+                    </a>
                 </div>
-
             </div>
         </section>
     );

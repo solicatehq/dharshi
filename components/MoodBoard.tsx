@@ -1,47 +1,89 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 export const MoodBoard: React.FC = () => {
-    // Grid Setup: 3 columns, 2 rows (6 cells total)
-    // 1. luxeai1: 1x1 (Top Left)
-    // 2. luxeai2: 1x1 (Top Middle)
-    // 3. luxeai3: 1x2 (Right Column, spans both rows)
-    // 4. luxeai4: 2x1 (Bottom Left, spans first two columns)
     const images = [
-        { src: '/iascent.jpeg', alt: 'Example of commercial product photography', span: 'col-span-1 row-span-1' },
-        { src: '/luxe-perfume-oudh.png', alt: 'Luxury product composition', span: 'col-span-1 row-span-1' },
-        { src: '/luxeai3.jpeg', alt: 'Architecture detail', span: 'col-span-1 row-span-2' },
-        { src: '/luxeai4.jpeg', alt: 'Lifestyle composition', span: 'col-span-2 row-span-1' },
+        {
+            src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2574&auto=format&fit=crop', // Friends/Creators together
+            title: 'Creator Community',
+            category: 'Collaboration',
+            span: 'md:col-span-4 md:row-span-2'
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1615526675159-e248c3021d3f?q=80&w=2000&auto=format&fit=crop', // Skincare texture macro
+            title: 'Texture & Detail',
+            category: 'Product Focus',
+            span: 'md:col-span-4 md:row-span-1'
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2674&auto=format&fit=crop', // Fashion/Shopping shot
+            title: 'Lifestyle Aesthetics',
+            category: 'Fashion',
+            span: 'md:col-span-4 md:row-span-3'
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?q=80&w=2000&auto=format&fit=crop', // Hand holding phone
+            title: 'POV Consumption',
+            category: 'Digital Life',
+            span: 'md:col-span-8 md:row-span-2'
+        },
     ];
 
     return (
-        <section className="py-24 bg-stone-50">
+        <section className="py-24 md:py-32 bg-stone-100">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-                    <div className="max-w-xl">
-                        <span className="text-xs font-sans uppercase tracking-[0.2em] text-stone-400 mb-4 block">Mood & Aesthetic</span>
-                        <h2 className="font-serif text-4xl md:text-5xl text-stone-900 leading-tight">
-                            Visual <span className="italic text-stone-600">Poetry</span>
+
+                {/* Header */}
+                <div className="flex flex-col md:flex-row justify-between items-end mb-20">
+                    <div className="max-w-2xl">
+                        <div className="flex items-center gap-4 mb-4">
+                            <span className="h-px w-12 bg-brown-900/20" />
+                            <span className="text-xs font-sans uppercase tracking-[0.3em] text-brown-500 font-medium">Aesthetic Direction</span>
+                        </div>
+                        <h2 className="font-serif text-5xl md:text-7xl text-brown-900 leading-[0.9]">
+                            Visual <span className="italic font-light text-brown-600">Poetry</span>
                         </h2>
                     </div>
-                    <p className="text-stone-500 font-sans text-sm tracking-wide mt-6 md:mt-0 max-w-xs">
-                        A curated collection of textures, tones, and visual moments that define the Luxe aesthetic.
+                    <p className="text-brown-500 font-sans text-sm tracking-wide mt-6 md:mt-0 max-w-xs text-right hidden md:block">
+                        Curated textures and tones defining the new standard of digital elegance.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 h-[120vh] md:h-[800px]">
+                {/* Gallery Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-12 auto-rows-[200px] gap-6">
                     {images.map((img, idx) => (
                         <div
                             key={idx}
-                            className={`relative overflow-hidden group ${img.span} h-full w-full`}
+                            className={`relative group overflow-hidden ${img.span} rounded-sm`}
                         >
-                            <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/10 transition-colors duration-500 z-10" />
+                            <div className="absolute inset-0 bg-brown-900/0 group-hover:bg-brown-900/20 transition-colors duration-500 z-10" />
+
                             <img
                                 src={img.src}
-                                alt={img.alt}
-                                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                                alt={img.title}
+                                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
                             />
+
+                            {/* Hover Overlay Content */}
+                            <div className="absolute inset-0 z-20 p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <div className="self-end bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20">
+                                    <ArrowUpRight className="text-white w-5 h-5" />
+                                </div>
+
+                                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                                    <p className="text-xs font-sans text-white/80 uppercase tracking-widest mb-2">{img.category}</p>
+                                    <h3 className="text-3xl font-serif text-white italic">{img.title}</h3>
+                                </div>
+                            </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Mobile View All */}
+                <div className="mt-12 text-center md:hidden">
+                    <a href="#portfolio" className="inline-block border-b border-brown-900 text-brown-900 text-xs uppercase tracking-widest pb-1">
+                        View All Works
+                    </a>
                 </div>
             </div>
         </section>
