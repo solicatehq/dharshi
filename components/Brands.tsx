@@ -6,7 +6,7 @@ export const Brands: React.FC = () => {
     const allBrands = [...BRANDS, ...BRANDS]; // Duplicate for seamless scrolling
 
     return (
-        <section className="py-24 bg-brown-900 overflow-hidden border-y border-gold-500/10">
+        <section id="brands" className="py-24 bg-brown-900 overflow-hidden border-y border-gold-500/10">
             <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
                 <span className="text-gold-400 font-sans text-xs tracking-[0.3em] uppercase opacity-80">Trusted By</span>
             </div>
