@@ -1,20 +1,20 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Priyadharshika - UGC Portfolio
 
-# Run and deploy your AI Studio app
+This is the official portfolio website for **Priyadharshika**, a high-end UGC (User Generated Content) Creator specializing in beauty, fashion, and lifestyle.
 
-This contains everything you need to run your app locally.
+The website serves as a professional space to showcase creative work and manage brand collaborations.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1-220AkML3J-qcTIcEnYJLyzZk1g9WeIi
+## What the Website Does
 
-## Run Locally
+- **Showcases Work**: A dedicated section for high-quality video content and aesthetic reels that demonstrate Priyadharshika's creative style.
+- **Highlights Experience**: Displays a list of trusted domestic and international brands she has worked with.
+- **Details Services**: Provides clear information on collaboration packages, including short-form video content and ad usage rights.
+- **Direct Contact**: Includes a contact form for brands to easily reach out for new campaigns.
 
-**Prerequisites:**  Node.js
+## Overview
 
+The site is designed with a premium, minimalist aesthetic to match Priyadharshika's brand voice. It offers a smooth, single-page navigation experience, allowing visitors to quickly jump between her work, rates, and contact information.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+_Curating aesthetic visual stories. Where elegance meets performance._
